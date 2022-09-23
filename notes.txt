@@ -2,5 +2,5 @@ SuperUser Details:
 Username: Admin
 Password: Admin1
 
-tutorial video link part 22:
-https://www.youtube.com/watch?v=Nz5F60OxOKI&list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL&index=22
+tutorial video link part 24:
+https://www.youtube.com/watch?v=Pc4SF7bSkMs&list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL&index=24

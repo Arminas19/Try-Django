@@ -7,8 +7,16 @@
     <title> Base </title>
 </head>
 <body>
-    {% block content %}
 
+    <h1> Hello World </h1>
+    <form action="/articles/" method="GET">
+        <input type="text" name="q">
+        <input type="submit">
+    </form>
+
+
+    {% block content %}
+    <h3> This will be replaced.</h3>
     {% endblock content %}
 </body>
 </html>
