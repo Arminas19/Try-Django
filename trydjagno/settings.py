@@ -51,6 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'trydjagno.urls'
+LOGIN_URL = '/login/'
 
 TEMPLATES = [
     {

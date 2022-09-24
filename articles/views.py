@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Article
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
+
 
 def article_search_view(request):
     """ Search view """
@@ -20,7 +23,7 @@ def article_search_view(request):
 
     return render(request, 'articles/search.html', context=context)
 
-
+@login_required
 def article_create_view(request):
     """ create article """
     context = {}
