@@ -23,6 +23,7 @@ def article_search_view(request):
 
     return render(request, 'articles/search.html', context=context)
 
+
 @login_required
 def article_create_view(request):
     """ new create article """
@@ -33,8 +34,6 @@ def article_create_view(request):
     if form.is_valid():
         article_object = form.save()
         context['form'] = ArticleForm()
-        # context['object'] = article_object
-        # context['created'] = True
     return render(request, "articles/create.html", context=context)
 
 # def article_create_view(request):
@@ -60,9 +59,7 @@ def article_detail_view(request, id=None):
     article_obj = None
     if id is not None:
         article_obj = Article.objects.get(id=id)
-
     context = {
-        "object":article_obj,
+        "object": article_obj,
     }
-
     return render(request, "articles/details.html", context=context)
