@@ -1,1 +1,1 @@
-web: gunicorn trydjango.wsgi
+web: gunicorn trydjagno.wsgi
