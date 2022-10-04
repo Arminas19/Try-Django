@@ -51,3 +51,11 @@ class ArticleTestCase(TestCase):
         user_obj =  Article.objects.create(title='hello world', content='User created hello world')
         user_new_slug = user_obj.slug
         self.assertNotEqual(user_new_slug, 'hello world')
+
+    def test_article_search_manager(self):
+        qs = Article.objects.search(query='hello world')
+        self.assertEqual(qs.count(), self.number_of_articles)
+        qs = Article.objects.search(query='hello')
+        self.assertEqual(qs.count(), self.number_of_articles)
+        qs = Article.objects.search(query='something else')
+        self.assertEqual(qs.count(), self.number_of_articles)
