@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from .models import Recipe, RecipeIngredient
@@ -55,3 +56,24 @@ class RecipeTestCase(TestCase):
         recipeingredients_ids = list(user.recipe_set.all().values_list('recipeingredient__id', flat=True))
         qs = RecipeIngredient.objects.filter(id__in=recipeingredients_ids)
         self.assertEqual(qs.count(), 1)
+
+    def test_unit_measure_validation(self):
+        invalid_unit = 'kg'
+        ingredient = RecipeIngredient(
+            name='New',
+            quantity=10,
+            recipe=self.recipe_a,
+            unit=invalid_unit
+        )
+        ingredient.full_clean()
+
+    def test_unit_measure_validation_error(self):
+        invalid_unit = 'nada'
+        with self.assertRaises(ValidationError):
+            ingredient = RecipeIngredient(
+                name='New',
+                quantity=10,
+                recipe=self.recipe_a,
+                unit=invalid_unit
+            )
+            ingredient.full_clean()
