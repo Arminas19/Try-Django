@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Recipe, RecipeIngredient
-from .form import RecipeForm
+from .forms import RecipeForm
 # Create your views here.
 
 
