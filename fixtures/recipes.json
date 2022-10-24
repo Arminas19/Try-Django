@@ -1,0 +1,108 @@
+[
+{
+    "model": "recipes.recipe",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "name": "Grilled Chicken",
+        "desciption": "Plane Chicken Desciption",
+        "direction": "slam chicken im wooden table: Direction",
+        "timestamp": "2022-10-06T15:27:50.531Z",
+        "updated": "2022-10-23T13:46:52.824Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "name": "Chciken",
+        "desciption": "Nice 1",
+        "direction": "go their and doSomething",
+        "timestamp": "2022-10-24T11:53:23.545Z",
+        "updated": "2022-10-24T11:53:23.545Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 1,
+    "fields": {
+        "recipe": 1,
+        "name": "chicken burger",
+        "desciption": "",
+        "quantity": "34",
+        "quantity_as_float": 34.0,
+        "unit": "ounces",
+        "direction": "",
+        "timestamp": "2022-10-06T15:41:21.690Z",
+        "updated": "2022-10-23T13:46:52.826Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 5,
+    "fields": {
+        "recipe": 1,
+        "name": "lol",
+        "desciption": null,
+        "quantity": "2",
+        "quantity_as_float": 2.0,
+        "unit": "kg",
+        "direction": null,
+        "timestamp": "2022-10-21T12:06:50.623Z",
+        "updated": "2022-10-23T13:46:52.828Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 6,
+    "fields": {
+        "recipe": 1,
+        "name": "lol",
+        "desciption": null,
+        "quantity": "2",
+        "quantity_as_float": 2.0,
+        "unit": "kg",
+        "direction": null,
+        "timestamp": "2022-10-21T12:06:53.206Z",
+        "updated": "2022-10-23T13:46:52.830Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 7,
+    "fields": {
+        "recipe": 1,
+        "name": "lol",
+        "desciption": null,
+        "quantity": "2",
+        "quantity_as_float": 2.0,
+        "unit": "kg",
+        "direction": null,
+        "timestamp": "2022-10-21T12:07:40.058Z",
+        "updated": "2022-10-23T13:46:52.832Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 8,
+    "fields": {
+        "recipe": 1,
+        "name": "pasta",
+        "desciption": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kg",
+        "direction": null,
+        "timestamp": "2022-10-23T13:29:35.054Z",
+        "updated": "2022-10-23T13:46:52.833Z",
+        "active": true
+    }
+}
+]
