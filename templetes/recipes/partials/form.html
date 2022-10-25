@@ -1,9 +1,5 @@
-<div style="margin-top: 30px;">
     <form action="." method="POST" hx-post='.' hx-swap='outerHTML'>
         {% csrf_token %}
-        {% if message %}
-            <p> {{ message }} </p>
-        {% endif %}
         {% for field in form %}
         <div class="{% if field.field.required %}{{ form.required_css_class }}{% endif %}">
             {{ field.errors }}
@@ -13,6 +9,8 @@
             {% endif %}
         </div>
         {% endfor %}
+
+        
             {% if formset %}
             <h3>Ingredients</h3>
             {{ formset.management_form }}
@@ -29,6 +27,9 @@
                     <div id="empty-form" class="hidden">{{ formset.empty_form.as_p }}</div>
                     <button id="add-more" type="button"> Add More</button>
             {% endif %}
-        <button style="margin-top: 30px;" type="submit"> Save </button>
+        <div class="htmx-indicator">Loading...</div>
+        <button class="htmx-inverted-indicator" style="margin-top: 30px;" type="submit"> Save </button>
+        {% if message %}
+            <p> {{ message }} </p>
+        {% endif %}
     </form>
-</div>
