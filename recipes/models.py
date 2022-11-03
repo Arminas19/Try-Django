@@ -1,3 +1,5 @@
+import pathlib
+import uuid
 import pint
 from django.conf import settings
 from django.db import models
@@ -58,6 +60,17 @@ class Recipe(models.Model):
         return self.recipeingredient_set.all()
 
 
+def recipe_ingredient_image_upload_handler(instance, filename):
+    fpath = pathlib.Path(filename)
+    new_fname = str(uuid.uuid1())
+    return f"staticfiles/media-root/{new_fname}{fpath.suffix}"
+
+class RecipeIngredientImage(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    # image = models.ImageField(upload_to="staticfiles/media-root/")
+    image = models.ImageField(upload_to=recipe_ingredient_image_upload_handler)
+
+
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     name = models.CharField(max_length=220)
@@ -105,7 +118,6 @@ class RecipeIngredient(models.Model):
     def as_imperial(self):
         measurement = self.convert_to_system(system="imperial")
         return measurement.to_base_units()
-
 
 
     def save(self, *args, **kwargs):
