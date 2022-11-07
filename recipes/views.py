@@ -5,6 +5,7 @@ from django.forms.models import modelformset_factory
 from django.http import HttpResponse
 from .models import Recipe, RecipeIngredient
 from .forms import RecipeForm, RecipeIngredientForm, RecipeIngredientImageForm
+# from .services import extract_text_via_ocr_service
 # Create your views here.
 
 
@@ -181,4 +182,6 @@ def recipe_ingredient_image_upload_view(request, parent_id=None):
         obj = form.save(commit=False)
         obj.recipe = parent_obj
         obj.save()
+        # result = extract_text_via_ocr_service(obj.image)
+        # print(result)
     return render(request, template_name, {"form": form})
